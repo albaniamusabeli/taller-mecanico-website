@@ -1,0 +1,24 @@
+/* Overriding styles placeholder size */
+
+::-webkit-input-placeholder {
+    font-size: 16px !important;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    font-size: 16px !important;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: 16px !important;
+}
+
+/* Colores iconos inputs */
+.green-icon {
+    color: #198754;
+}
+
+.red-icon{
+    color: #dc3545;
+}

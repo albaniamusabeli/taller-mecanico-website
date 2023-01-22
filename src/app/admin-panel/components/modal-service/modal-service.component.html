@@ -1,0 +1,36 @@
+<h4 class="text-center mt-3">{{tituloModal}}
+  <div class="float-end cerrar">
+    <button (click)="cerrarModal()">
+      <mat-icon color="accent">close</mat-icon>
+    </button>
+  </div>
+</h4>
+
+<div class="container mt-5">
+  <form [formGroup]="formAgregarServicio" (ngSubmit)="agregarEditarServicio()">
+    <div class="row text-center">
+      <div class="col-6">
+        <mat-form-field appearance="fill">
+          <mat-label>Categorías</mat-label>
+          <mat-select formControlName="categoria">
+            <!-- ID de la Categoriía -->
+            <!-- Aca va el formcontrolname -->
+            <mat-option *ngFor="let categoria of categorias" [value]="categoria.id">
+              {{categoria.nombre}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre del Servicio</mat-label>
+          <input matInput placeholder="" formControlName="nombre">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="formAgregarServicio.invalid">
+      <span>{{boton}}</span>
+    </button>
+  </form>
+</div>

@@ -1,0 +1,92 @@
+<h4 class="text-center mt-3" color="primary">{{tituloModal}}
+    <div class="float-end cerrar">
+        <button (click)="cerrarModal()">
+            <mat-icon color="accent">close</mat-icon>
+        </button>
+    </div>
+</h4>
+
+<div class="container mt-5">
+    <form [formGroup]="formularioTrabajo" (ngSubmit)="agregarEditarTrabajo()">
+        <!-- ROW 1 -->
+        <div class="row mx-5 mb-4">
+            <div class="col">
+                <mat-form-field appearance="fill">
+                    <input type="text" matInput [matAutocomplete]="auto" placeholder="Patente del vehículo"
+                        [formControl]="controlPatente">
+                    <mat-autocomplete (optionSelected)="onPatenteSelected($event.option)" #auto="matAutocomplete"
+                        [displayWith]="displayFnPatente">
+                        <mat-option *ngFor="let patente of patentesFiltradas | async" [value]="patente">
+                            {{patente}}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+            </div>
+            <div class="col">
+            </div>
+        </div>
+
+        <!-- ROW 2 -->
+        <div class="row mx-5 mb-4">
+            <div class="col">
+                <select class="form-select" aria-label="Default select example" formControlName="empleado">
+                    <option value="" selected disabled hidden>Seleccione nombre del empleado</option>
+                    <option *ngFor="let empleado of listaEmpleados" [value]="empleado.id">{{empleado.p_nombre}}
+                        {{empleado.ap_paterno}}</option>
+                </select>
+            </div>
+            <div class="col">
+                <select class="form-select" aria-label="Default select example" formControlName="servicio">
+                    <option value="" selected disabled hidden>Seleccione el servicio</option>
+                    <option *ngFor="let servicio of listaServicios" [value]="servicio.id">{{servicio.nombre}}</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- ROW 3 -->
+        <div class="row mx-5 mb-4">
+            <div class="col">
+                <!-- DATEPICKER -->
+                <mat-form-field appearance="fill">
+                    <mat-label>Fecha del trabajo</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="fecha">
+                    <mat-hint>DD/MM/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="col">
+                <div class=" input-group input-group-lg mb-3">
+                    <span class="input-group-text" id="basic-addon1">
+                        <i class="fas fa-dollar-sign" [class.green-icon]="this.formularioTrabajo.get('valor')?.valid"
+                        [class.red-icon]="this.formularioTrabajo.get('valor')?.invalid && this.formularioTrabajo.get('valor')?.touched"></i>
+                    </span>
+                    <input type="number" class="form-control" placeholder="Valor del trabajo" aria-label="valor"
+                        formControlName="valor">
+                </div>
+            </div>
+        </div>
+
+        <!-- ROW 4 -->
+        <div class="row mx-5 mb-4">
+            <div class="col">
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="descripcion"
+                    placeholder="Observaciones (opcional)">
+                </textarea>
+            </div>
+            <div class="col">
+            </div>
+        </div>
+
+        <!-- ROW BUTTON -->
+        <div class="row mx-5 mb-3">
+            <div class="col-12">
+                <button mat-raised-button color="primary" type="submit" [disabled]="formularioTrabajo.invalid">
+                    {{textoBoton}}
+                </button>
+            </div>
+        </div>
+
+
+    </form>
+</div>

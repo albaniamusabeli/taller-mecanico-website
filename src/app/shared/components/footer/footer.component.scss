@@ -1,0 +1,14 @@
+.footer {
+  background-color: var(--color-dark-grey);
+  color: var(--color-light);
+
+  h5{
+    font-family: var(--font-ubuntu);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+
+  .copyright-section {
+    background-color: var(--color-dark);
+  }
+}

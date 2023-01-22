@@ -1,0 +1,315 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,100&family=Ubuntu:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+/* Imports Map Leaflet*/
+@import url('https://unpkg.com/leaflet@1.8.0/dist/leaflet.css');
+
+:root {
+  /* Variables */
+
+  /* Colors */
+  --color-dark-blue: #12428B;
+  --color-pale-blue: #37598B;
+  --color-blue: #1264DF;
+  --color-deep-blue: #3D4B64;
+  --color-deep-darkblue: #2F3D56;
+  --color-light-blue: #3385ff;
+  --color-light: #F8F9FA;
+  --color-light-grey: #f7f7f7;
+  --color-grey: #747474;
+  --color-dark-grey: #393939;
+  --color-dark: #120E0F;
+
+  /* Fonts */
+  --font-ubuntu: 'ubuntu', 'sans-serif';
+  --font-roboto: 'roboto', 'sans-serif';
+
+  /* Font Weights */
+  --font-light: 300;
+  --font-bold: 700;
+
+  /* Transition */
+  --transition-ease: all 500ms ease-in-out;
+
+  /* Shadows */
+  --box-shadow: -5px 5px 15px 1px rgba(0, 0, 0, 0.42);
+}
+
+;
+
+body {
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+;
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-ubuntu);
+  font-weight: var(--font-bold);
+  text-transform: initial;
+}
+
+.btn {
+  span {
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}
+
+.title {
+
+  h3,
+  h5 {
+    color: var(--color-dark-blue);
+  }
+
+  h3 {
+    font-family: var(--font-ubuntu);
+    font-size: 1.8rem;
+    font-weight: 600;
+
+    .title-regular {
+      font-weight: var(--font-light);
+    }
+  }
+
+  p,
+  h5 {
+    font-family: var(--font-roboto);
+  }
+
+  .white {
+    color: white !important;
+  }
+}
+
+.title-page {
+  color: rgba(27, 9, 190, 0.5);
+  background: linear-gradient(0deg, rgba(55, 89, 139, 0.7), rgba(55, 89, 139, 0.7)), url('assets/img/motor.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  h3 {
+    font-family: var(--font-ubuntu);
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: white;
+    padding: 5rem 0;
+    text-align: center;
+  }
+}
+
+button {
+  border: 0;
+}
+
+
+/* Forms */
+.form-container {
+  background-color: #fff;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+}
+
+/* Servicios */
+.service-container {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .icon-circle {
+    background: var(--color-blue);
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    position: relative;
+    font-size: 3rem;
+
+    i,
+    h2 {
+      color: white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .service-title {
+    padding: 1rem;
+    color: var(--color-dark-blue);
+  }
+}
+
+.text-p {
+  font-size: 1.2rem;
+  color: var(--color-dark-grey);
+}
+
+/* Contacto */
+.background-blue {
+  color: rgba(27, 9, 190, 0.5);
+  background: linear-gradient(0deg, rgba(55, 89, 139, 0.9), rgba(55, 89, 139, 0.9)), url('assets/img/motor.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-container {
+  background-color: #fff;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+}
+
+/* Keyframes */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-250px*7);
+  }
+}
+
+
+// Estilos formulario
+.form-container {
+  background-color: #fff;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+}
+
+
+/* Panel admin */
+table {
+  width: 100%;
+}
+
+router-outlet {
+  min-height: 100vh;
+}
+
+.app-toolbar {
+  position: sticky;
+  position: -webkit-sticky;
+  /* For macOS/iOS Safari */
+  top: 0;
+  /* Sets the sticky toolbar to be on top */
+  z-index: 1000;
+  /* Ensure that your app's content doesn't overlap the toolbar */
+}
+
+.table-container {
+  //margin-top: 3rem;
+  padding: 0;
+  position: relative;
+  min-height: 200px;
+  max-height: 600px;
+  overflow: auto;
+}
+
+.admin-page {
+  //padding-top: 2rem;
+  font-family: var(-font-ubuntu);
+  font-size: 1.2rem;
+  font-weight: 500;
+
+  div:first-of-type {
+
+    //padding: 0;
+    .route {
+      display: flex;
+      align-items: center;
+
+      .current {
+        color: var(--color-blue);
+      }
+    }
+  }
+
+  mat-card {
+    background: var(--color-light-grey);
+
+    .message {
+      h4 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: var(--color-blue);
+        margin-bottom: 1rem;
+        font-family: var(--font-ubuntu);
+      }
+
+      p {
+        font-size: 1rem;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+// Modal
+h4 {
+  font-family: var(--font-ubuntu), 'Sans-serif';
+  color: var(--color-dark-blue);
+  div{
+    button {
+      background: transparent;
+      border-radius: 50%;
+      transition: all .5s ease-in-out;
+
+      mat-icon{
+        vertical-align: middle;
+      }
+    }
+    button:hover {
+      background: var(--color-light-grey);
+      border: 50%;
+    }
+  }
+}
+
+/* Overriding styles placeholder size */
+
+::-webkit-input-placeholder {
+  font-size: 16px !important;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  font-size: 16px !important;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 16px !important;
+}
+
+/* Colores iconos inputs */
+.green-icon {
+  color: #198754;
+}
+
+.red-icon{
+  color: #dc3545;
+}
+
+mat-form-field{
+  width: 100%;
+}
+/* Estilos botónn exportar Excel */
+button.button-green {
+  background-color: #2bab62 !important;
+}
+
+.excel{
+  font-size: 20px;
+}

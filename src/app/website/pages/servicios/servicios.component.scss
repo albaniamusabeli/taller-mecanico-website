@@ -1,0 +1,35 @@
+/* Servicios */
+#servicios {
+  .servicios-card {
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+  }
+}
+
+.title h3 {
+  position: relative;
+
+  &:after {
+    position: absolute;
+    content: '';
+    height: 0.3rem;
+    bottom: -1rem;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 6rem;
+    background: var(--color-dark-blue);
+    border-radius: 25px;
+    -o-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+  }
+
+  &:hover {
+    &:after {
+      width: 10rem;
+    }
+  }
+}

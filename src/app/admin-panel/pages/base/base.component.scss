@@ -1,0 +1,60 @@
+h3 {
+  font-family: var(--font-ubuntu);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+mat-sidenav-container {
+  height: 100vh;
+}
+
+.mat-drawer {
+  background: #3D4B64!important;
+}
+
+mat-sidenav {
+  width: 200px;
+  background-color: #3D4B64;
+  mat-list {
+    mat-list-item {
+      a {
+        color: white !important;
+        text-decoration: none !important;
+      }
+
+      span {
+        margin-left: 1rem;
+      }
+    }
+    mat-list-item:hover, .active{
+      background: white;
+      transition: all .5s ease;
+      a{
+        color:#3D4B64!important;
+      }
+    }
+  }
+
+}
+
+mat-toolbar-row {
+  background-color: var(--color-light-grey);
+  span {
+    color: var(--color-grey);
+    font-weight: 300;
+  }
+}
+
+mat-sidenav-content {
+  button {
+    background-color: var(--color-deep-darkblue);
+    padding: 1rem 1.5rem 1rem 1rem;
+    border-radius: 0 2rem 2rem 0;
+    color: white;
+  }
+}
+
+button{
+  font-family: var(--font-ubuntu);
+  color: #EE4C29;
+}

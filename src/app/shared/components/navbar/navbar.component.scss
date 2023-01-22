@@ -1,0 +1,46 @@
+
+#navbarNavAltMarkup {
+  a {
+    font-family: 'roboto', 'sans-serif';
+    text-transform: uppercase;
+
+
+    &.active {
+      color: var(--color-blue)!important;
+    }
+
+    &.reservation {
+      color: white;
+      padding: 1rem;
+      font-weight: 500;
+      background-color: var(--color-blue);
+      margin: 0 3rem;
+      border-radius: 2rem;
+    }
+
+    &.special{
+      &:hover {
+        background-color: var(--color-light-blue);
+        color: var(--color-light);
+        transition: var(--transition-ease);
+      }
+    }
+
+    &.register{
+      border: 1px solid;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      color: var(--color-grey);
+    }
+
+    &:not(.special):hover{
+      color: var(--color-blue)!important;
+      transition: var(--transition-ease);
+    }
+
+  }
+}
+
+.navbar-nav {
+  margin-right: 10rem;
+}

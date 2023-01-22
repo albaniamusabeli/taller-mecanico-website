@@ -1,0 +1,74 @@
+<h4 class="text-center mt-3" color="primary">{{tituloModal}}
+    <div class="float-end cerrar">
+        <button (click)="cerrarModal()">
+            <mat-icon color="accent">close</mat-icon>
+        </button>
+    </div>
+</h4>
+
+<div class="container mt-5">
+    <form [formGroup]="formInventario" (ngSubmit)="agregarEditarInventario()">
+
+        <!-- ROW 1 -->
+        <div class="row mx-5 mb-4">
+            <div class="col">
+                <select class="form-select" aria-label="Default select example" formControlName="categoria">
+                    <option value="" selected disabled hidden>Seleccione categoría del insumo</option>
+                    <option *ngFor="let categoria of listaCategorias" [value]="categoria.id">{{categoria.nombre}}</option>
+                </select>
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+
+        <!-- ROW 2 -->
+        <div class="row mx-5 mb-3">
+            <div class="col">
+                <div class=" input-group input-group-lg mb-3">
+                    <span class="input-group-text" id="basic-addon1">
+                        <i class="fas fa-tools" [class.green-icon]="this.formInventario.get('marca')?.valid"
+                            [class.red-icon]="this.formInventario.get('marca')?.invalid && this.formInventario.get('marca')?.touched"></i>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Nombre Marca" formControlName="marca">
+                </div>
+            </div>
+            <div class="col">
+                <div class=" input-group input-group-lg mb-3">
+                    <span class="input-group-text" id="basic-addon1">
+                        <i class="fas fa-align-justify"
+                            [class.green-icon]="this.formInventario.get('descripcion')?.valid"
+                            [class.red-icon]="this.formInventario.get('descripcion')?.invalid && this.formInventario.get('descripcion')?.touched"></i>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Descripción" formControlName="descripcion">
+                </div>
+            </div>
+        </div>
+
+        <!-- ROW 3 -->
+        <div class="row mx-5 mb-3">
+            <div class="col">
+                <div class=" input-group input-group-lg mb-3">
+                    <span class="input-group-text" id="basic-addon1">
+                        <i class="fas fa-pen" [class.green-icon]="this.formInventario.get('unidad')?.valid"
+                            [class.red-icon]="this.formInventario.get('unidad')?.invalid && this.formInventario.get('unidad')?.touched"></i>
+                    </span>
+                    <input type="number" class="form-control" placeholder="Número de unidades" formControlName="unidad">
+                </div>
+            </div>
+            <div class="col">
+            </div>
+        </div>
+
+        <!-- ROW BUTTON -->
+        <div class="row mx-5 mb-3">
+            <div class="col-12">
+                <button mat-raised-button color="primary" type="submit" [disabled]="formInventario.invalid">
+                    {{textoBoton}}
+                </button>
+            </div>
+        </div>
+
+
+    </form>
+</div>

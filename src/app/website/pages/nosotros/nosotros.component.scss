@@ -1,0 +1,16 @@
+/* Nosotros */
+.icons-container {
+  ul {
+    list-style: none;
+
+    &.icons {
+      color: var(--color-blue);
+
+      li {
+        font-size: 2rem;
+        margin-right: 1rem;
+      }
+    }
+
+  }
+}

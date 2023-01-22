@@ -1,0 +1,73 @@
+<!-- Sección de Servicios -->
+<section id="servicios">
+  <div class="contaier-fluid">
+    <div class="title-page">
+      <h3>Nuestros Servicios</h3>
+    </div>
+  </div>
+  <div class="container">
+    <p class="text-p text-center py-4">Nuestro compromiso es brindarles a nuestros clientes servicios con los más altos
+      estándares de calidad,
+      entregándoles confianza a través de nuestros especialistas altamente calificados y comprometidos con su labor.
+    </p>
+  </div>
+  <div class="container py-3">
+
+  <!--   <div class="col-12 text-center">
+      <div class="spinner-border text-primary my-5" *ngIf="loader" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div> -->
+
+    <div class="row mb-5">
+      <div class="title py-5 text-center">
+        <h3>Servicios de Frenos</h3>
+      </div>
+      <div class="row">
+        <div *ngFor="let freno of frenos" class="col-12 col-md-4">
+          <div class="d-flex my-3 align-items-center justify-content-center">
+            <div class="service-container">
+              <div class="icon-circle">
+                <i class="fa-solid fa-car"></i>
+              </div>
+              <h5 class="service-title">{{freno}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="title py-5 text-center">
+        <h3>Servicios Eléctricos</h3>
+      </div>
+      <div class="row">
+        <div *ngFor="let electrico of electricos" class="col-12 col-md-4">
+          <div class="d-flex my-3 align-items-center justify-content-center">
+            <div class="service-container">
+              <div class="icon-circle">
+                <i class="fa-solid fa-bolt"></i>
+              </div>
+              <h5 class="service-title">{{electrico}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="title py-5 text-center">
+        <h3>Servicios de Motor</h3>
+      </div>
+      <div class="row">
+        <div *ngFor="let motor of motores" class="col-12 col-md-4">
+          <div class="d-flex my-3 align-items-center justify-content-center">
+            <div class="service-container">
+              <div class="icon-circle">
+                <i class="fa-solid fa-wrench"></i>
+              </div>
+              <h5 class="service-title">{{motor}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Fin Sección de Servicios -->

@@ -1,0 +1,107 @@
+<h4 class="text-center mt-3" color="primary">{{tituloModal}}
+  <div class="float-end cerrar">
+    <button (click)="cerrarModal()">
+      <mat-icon color="accent">close</mat-icon>
+    </button>
+  </div>
+</h4>
+
+<div class="container mt-5">
+  <form [formGroup]="formularioCliente" (ngSubmit)="agregarEditarCliente()">
+    <!-- ROW 1 -->
+    <div class="row mx-5 mb-3 justify-content-start">
+      <div class="col-4">
+        <div class=" input-group input-group-lg mb-3">
+          <span class="input-group-text" id="basic-addon1">
+            <i class="fa-solid fa-id-card" [class.green-icon]="this.formularioCliente.get('run')?.valid"
+              [class.red-icon]="this.formularioCliente.get('run')?.invalid && this.formularioCliente.get('run')?.touched"></i>
+          </span>
+          <input type="text" class="form-control" placeholder="Run" aria-label="Run" formControlName="run">
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="input-group-lg mb-3">
+          <input type="email" class="form-control" id="floatingInput" placeholder="DV" formControlName="dv_run"
+            [ngClass]="(formularioCliente.get('dv_run')?.touched || formularioCliente.get('dv_run')?.dirty)
+                && formularioCliente.get('dv_run')?.errors ? 'is-invalid' : '' ">
+        </div>
+      </div>
+    </div>
+    <!-- ROW 2 -->
+    <div class="row mx-5 mb-3">
+      <div class="col">
+        <div class=" input-group input-group-lg mb-3">
+          <span class="input-group-text" id="basic-addon1">
+            <i class="fa-solid fa-user" [class.green-icon]="this.formularioCliente.get('p_nombre')?.valid"
+              [class.red-icon]="this.formularioCliente.get('p_nombre')?.invalid && this.formularioCliente.get('p_nombre')?.touched"></i>
+          </span>
+          <input type="text" class="form-control" placeholder="Primer nombre" formControlName="p_nombre">
+        </div>
+      </div>
+      <div class="col">
+        <div class=" input-group input-group-lg mb-3">
+          <span class="input-group-text" id="basic-addon1">
+            <i class="fa-solid fa-user" [class.green-icon]="this.formularioCliente.get('s_nombre')?.touched"
+              [class.red-icon]="this.formularioCliente.get('s_nombre')?.invalid && this.formularioCliente.get('s_nombre')?.touched"></i>
+          </span>
+          <input type="text" class="form-control" placeholder="Segundo nombre" formControlName="s_nombre">
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 3 -->
+    <div class="row mx-5 mb-3">
+      <div class="col">
+        <div class=" input-group input-group-lg mb-3">
+          <span class="input-group-text" id="basic-addon1">
+            <i class="fa-solid fa-user" [class.green-icon]="this.formularioCliente.get('ap_paterno')?.valid"
+              [class.red-icon]="this.formularioCliente.get('ap_paterno')?.invalid && this.formularioCliente.get('ap_paterno')?.touched"></i>
+          </span>
+          <input type="text" class="form-control" placeholder="Apellido paterno" formControlName="ap_paterno">
+        </div>
+      </div>
+      <div class="col">
+        <div class=" input-group input-group-lg mb-3">
+          <span class="input-group-text" id="basic-addon1">
+            <i class="fa-solid fa-user" [class.green-icon]="this.formularioCliente.get('ap_materno')?.valid"
+              [class.red-icon]="this.formularioCliente.get('ap_materno')?.invalid && this.formularioCliente.get('ap_materno')?.touched"></i>
+          </span>
+          <input type="text" class="form-control" placeholder="Apellido materno" formControlName="ap_materno">
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 4 -->
+    <div class="row mx-5 mb-3">
+      <div class="col">
+        <div class=" input-group input-group-lg mb-3">
+          <span class="input-group-text" id="basic-addon1">
+            <i class="fa-solid fa-phone" [class.green-icon]="this.formularioCliente.get('telefono')?.valid"
+              [class.red-icon]="this.formularioCliente.get('telefono')?.invalid && this.formularioCliente.get('telefono')?.touched"></i>
+          </span>
+          <input type="text" class="form-control" placeholder="Teléfono" formControlName="telefono">
+        </div>
+      </div>
+      <div class="col">
+        <div class=" input-group input-group-lg mb-3">
+          <span class="input-group-text" id="basic-addon1">
+            <i class="fa-solid fa-envelope" [class.green-icon]="this.formularioCliente.get('correo')?.valid"
+              [class.red-icon]="this.formularioCliente.get('correo')?.invalid && this.formularioCliente.get('correo')?.touched"></i>
+          </span>
+          <input type="text" class="form-control" placeholder="Correo electrónico" formControlName="correo">
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW BUTTON -->
+    <div class="row mx-5 mb-3">
+      <div class="col-12">
+        <button mat-raised-button color="primary" type="submit" [disabled]="formularioCliente.invalid">
+          {{textoBoton}}
+        </button>
+      </div>
+    </div>
+
+
+  </form>
+</div>

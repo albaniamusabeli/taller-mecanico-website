@@ -1,0 +1,33 @@
+<mat-toolbar class="color-primary app-toolbar">
+  <mat-toolbar-row class="d-flex justify-content-between">
+    <div class="d-flex">
+      <a [routerLink]="['home']"><img src="assets/icon/logo.svg" class="img-fluid" alt="logo"></a>
+      <!-- <button mat-button (click)="opened=!opened">
+        <mat-icon>menu</mat-icon>
+      </button> -->
+    </div>
+    <div>
+      <span>{{time | date: 'fullDate'}} - {{time | date: 'mediumTime'}}</span>
+    </div>
+    <button mat-raised-button color="accent" (click)="cerrarSesion()">Cerrar Sesión
+      <i class="ps-2 fa-solid fa-arrow-right-from-bracket"></i></button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav [(opened)]="opened" mode="side" class="py-3">
+    <!-- <a [routerLink]="['']"><img src="assets/icon/logo-blanco.svg" class="img-fluid pb-3" alt="logo"></a> -->
+    <mat-list>
+      <mat-list-item *ngFor="let data of navData" routerLinkActive="active" [routerLinkActiveOptions]={exact:true}>
+        <a [routerLink]="[data.routeLink]">
+          <!-- (click)="opened=!opened" -->
+          <i [class]="data.icon"></i>
+          <span>{{data.label}}</span>
+        </a>
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="px-5">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
